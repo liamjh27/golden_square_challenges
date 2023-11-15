@@ -14,6 +14,8 @@ class DiaryEntry:
         return len(self.contents.split())/wpm
 
     def reading_chunk(self, wpm, minutes):
+        if self.pos >= self.count_words():
+            self.pos = 0
         words = self.contents.split()
         wordsRead = wpm * minutes
         chunk = ' '.join(words[self.pos:self.pos + wordsRead])
