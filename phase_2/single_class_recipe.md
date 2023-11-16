@@ -28,3 +28,25 @@ seen in test_todo.py
 
 implement the behaviour:
 behaviour implemented 
+
+
+Describe the problem:
+As a user
+So that I can keep track of my music listening
+I want to add tracks I've listened to and see a list of them.
+
+design the class interface:
+classname music
+initialise with attributes:
+empty list called listened_to to track songs that have been listened to.
+
+methods:
+add() to add songs listened to to the listened_to list.
+paramaters:
+artist type:str
+song type:str
+side effects: adds to the listened_to list
+
+show() to show list of listened to music.
+parameters: none
+side effects: none
