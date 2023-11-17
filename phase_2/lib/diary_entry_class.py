@@ -1,8 +1,18 @@
+import re 
+
+number_pattern = r'\b(07\d{9})\b'
+
 class DiaryEntry:
     def __init__(self, title, contents):
         self.title = title
         self.contents = contents
         self.pos = 0
+        self.contains_number = False
+        number = re.search(number_pattern, self.contents)
+        if number:
+            self.contains_number = True 
+            self.num = number.group()
+
 
     def format(self):
         return f'{self.title} : {self.contents}'

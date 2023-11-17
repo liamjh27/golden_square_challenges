@@ -1,9 +1,12 @@
 class Diary():
     def __init__(self):
         self.entries = []
+        self.phone_numbers = []
 
     def add(self, entry):
         self.entries.append(entry)
+        if entry.contains_number:
+            self.phone_numbers.append(entry.num)
 
     def all(self):
         return self.entries
@@ -23,3 +26,10 @@ class Diary():
         # print(entries_word_count)
         best_match = sorted(entries_word_count.items(), key=lambda item: item[1])[-1][0]
         return best_match
+
+    def read(self, entry):
+        return entry.format()    
+
+
+    def get_numbers(self):
+        return self.phone_numbers 
