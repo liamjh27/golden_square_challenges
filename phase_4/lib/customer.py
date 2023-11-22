@@ -1,8 +1,11 @@
+from misc.example_text_message import send_message as sendsms 
+
 class Customer:
-    def __init__(self, name, menu_list):
+    def __init__(self, name, menu_list, message_service):
         self.name = name
         self.menu_list = menu_list 
         self.order = []
+        self.message_service = message_service
 
 
     def add(self, item, quantity=1):
@@ -40,3 +43,6 @@ class Customer:
               self.order = [entry for entry in self.order if entry['Dish'] != item]
         else: 
             dict['Quantity'] -= quantity
+
+    def place_order(self):
+        self.message_service(self.name, self.view_order())
