@@ -6,10 +6,13 @@ class VowelRemover:
 
     def remove_vowels(self):
         i = 0
-        while i < len(self.text):
-            if self.text[i].lower() in self.vowels:
-                self.text = self.text[:i] + self.text[i+1:]
-            i += 1
+        new_string = ''
+        for char in self.text:
+            if char in self.vowels:
+                new_string = new_string
+            else:
+                new_string += char
+        self.text = new_string
         return self.text
 
 
